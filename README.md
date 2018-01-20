@@ -20,6 +20,11 @@ e.g.
     or a point deficit can be created
         happy = -1
 
-## Very deep
+## Very Deep
 Sarcasm detection - flag topics and look at the mood surrounding these topics. Think of common sarcastic 
 tendencies and phrases to take into account. A post may begin happy and end sad, or vice versa. Take the end of the post into higher regard if it is a story when judging temperature.
+
+Attempt to correct spelling errors.
+
+## External Desired Features
+Webscrapers to pull posts or articles from web platforms. Analyze sections of the net for overall temperature regarding targeted topics.
