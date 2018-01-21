@@ -1,5 +1,7 @@
 # posting-temperature-check
-Guess the emotional connotation of a post given the content of the post.
+
+### Dependencies
+Python3.6.4
 
 # TODO
 
@@ -24,7 +26,10 @@ e.g.
 Sarcasm detection - flag topics and look at the mood surrounding these topics. Think of common sarcastic 
 tendencies and phrases to take into account. A post may begin happy and end sad, or vice versa. Take the end of the post into higher regard if it is a story when judging temperature.
 
-Attempt to correct spelling errors.
+## Future
+Attempt to correct spelling errors. Do not remain agnostic about capitalization choices. All CAPS might hold significance.
+
+Emoji support and a client to add new phrases.
 
 ## External Desired Features
 Webscrapers to pull posts or articles from web platforms. Analyze sections of the net for overall temperature regarding targeted topics.

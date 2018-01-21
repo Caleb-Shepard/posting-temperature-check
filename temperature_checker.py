@@ -1,25 +1,52 @@
 #!(♥_♥)
 import csv
+import sys
 
-moods[]
-moods[0] =  'afraid'
-moods[1] =  'alive'
-moods[2] =  'angry'
-moods[3] =  'confused'
-moods[4] =  'depressed'
-moods[5] =  'good'
-moods[6] =  'happy'
-moods[7] =  'helpless'
-moods[8] =  'hurt'
-moods[9] =  'indifferent'
-moods[10] = 'interested'
-moods[11] = 'love'
-moods[12] = 'open'
-moods[13] = 'positive'
-moods[14] = 'sad'
-moods[15] = 'strong'
+moods = []
+moods.append('afraid')
+moods.append('alive')
+moods.append('angry')
+moods.append('confused')
+moods.append('depressed')
+moods.append('good')
+moods.append('happy')
+moods.append('helpless')
+moods.append('hurt')
+moods.append('indifferent')
+moods.append('interested')
+moods.append('love')
+moods.append('open')
+moods.append('positive')
+moods.append('sad')
+moods.append('strong')
 
+print('-------')
+print(moods)
+print('-------')
+
+# iterate through sys.argv[1:*]?
+
+mood_definitions = []
+
+# -------------------------------------------------------------------------------
 # moods[i] is the dictionary name and the elements should be assigned in the loop
+count = 0
 for i in moods:
-    csv_file = csv.reader(open('dictionaries/' + moods[i] + '.csv'))
-    mood_list = dict(csv_file)
+    filename = moods[count]
+    with open('dictionaries/' + filename + '.csv') as csvfile:
+        reader = csv.reader(csvfile, quoting=csv.QUOTE_NONNUMERIC)
+        for row in reader:                          # arbitrary for the time being
+            mood_definitions.append(row)
+    print(mood_definitions)
+    count = count + 1
+# -------------------------------------------------------------------------------
+
+# iterate through sys.argv[1:*]?
+
+# Deep
+# antiwords
+    # make an antiword list
+    # When handling not, just look for antiwords after finding a match
+    # (by examining antiword match one word before), then create a deficit
+# Deficits
+    # create deficits and positives untli the end. Do not act on these until it is finished
