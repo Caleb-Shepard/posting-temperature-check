@@ -2,53 +2,46 @@
 #!/(♥_♥)\
 import csv
 import sys
+import os
 
 moods = []
-moods.append('afraid')
-moods.append('alive')
-moods.append('angry')
-moods.append('confused')
-moods.append('depressed')
-moods.append('good')
-moods.append('happy')
-moods.append('helpless')
-moods.append('hurt')
-moods.append('indifferent')
-moods.append('interested')
-moods.append('love')
-moods.append('open')
-moods.append('positive')
-moods.append('sad')
-moods.append('strong')
-
-print('-------')
-print(moods)
-print('-------')
-
-# iterate through sys.argv[1:*]?
-
 mood_definitions = []
 
+
 # -----------------------ａｓｓｉｇｎ ｄｅｆｉｎｉｔｉｏｎｓ----------------------
-count = 0
-for i in moods:
-    filename = moods[count]
-    with open('dictionaries/' + filename + '.csv') as csvfile:
-        reader = csv.reader(csvfile, quoting=csv.QUOTE_NONNUMERIC)
-        for row in reader:                          # arbitrary for the time being
-            mood_definitions.append(row)
-    #print(mood_definitions[count])
-    count = count + 1
+for root, dirs, files in os.walk("./dictionaries/"):  
+    for filename in files:
+        #print(filename)
+
+        m = filename[:-5]   #  a mood
+
+        dicty = []  #  words implying the mood m
+        with open('dictionaries/' + filename) as csvfile:
+            reader = csv.reader(csvfile, quoting=csv.QUOTE_NONNUMERIC)
+            for row in reader:
+                dicty.append(row)
+
+        moods.append([m,dicty,0])
+
+moods[0][2] += 1
+print(moods[0][2])
+
+
+#for i in moods:
+#    with open('dictionaries/' + filename) as csvfile:
+#        reader = csv.reader(csvfile, quoting=csv.QUOTE_NONNUMERIC)
+#        for row in reader:                          # arbitrary for the time being
+#            mood_definitions.append(row)
 # -------------------------------------------------------------------------------
 
 # iterate through sys.argv[1:*]?
 # ^ Nah. Just use the first arg \/
-print("Taking the temperature of:")
-words = sys.argv[1].split()
-for w in words:
-    print("***>%s<***" %w)
-    #for m in moods:
-        #if w in m
+    #print("Taking the temperature of:")
+    #words = sys.argv[1].split()
+    #for w in words:
+    #    print("***>%s<***" %w)
+    #    #for m in moods:
+    #        #if w in m
 # Deep
 # antiwords
     # make an antiword list
