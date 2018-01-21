@@ -37,7 +37,7 @@ for i in moods:
         reader = csv.reader(csvfile, quoting=csv.QUOTE_NONNUMERIC)
         for row in reader:                          # arbitrary for the time being
             mood_definitions.append(row)
-    print(mood_definitions)
+    print(mood_definitions[count])
     count = count + 1
 # -------------------------------------------------------------------------------
 
