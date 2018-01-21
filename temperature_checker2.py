@@ -42,7 +42,6 @@ for i in moods:
 # -------------------------------------------------------------------------------
 
 # iterate through sys.argv[1:*]?
-
 # ^ Nah. Just use the first arg \/
 print("Taking the temperature of:")
 words = sys.argv[1].split()
@@ -50,8 +49,6 @@ for w in words:
     print("***>%s<***" %w)
     #for m in moods:
         #if w in m
-# ****** okay, I think the mood list will be awkward to work with. making a version 2...
-
 # Deep
 # antiwords
     # make an antiword list

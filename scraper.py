@@ -1,9 +1,9 @@
 #!/bin/python3
-
 import requests
 from bs4 import BeautifulSoup
 
 url = u'https://twitter.com/amermathsoc'
+
 
 r = requests.get(url)
 soup = BeautifulSoup(r.text, 'html.parser')
