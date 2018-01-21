@@ -1,4 +1,4 @@
-#!(♥_♥)
+#!/(♥_♥)\
 import csv
 import sys
 
@@ -28,8 +28,7 @@ print('-------')
 
 mood_definitions = []
 
-# -------------------------------------------------------------------------------
-# moods[i] is the dictionary name and the elements should be assigned in the loop
+# -----------------------ａｓｓｉｇｎ ｄｅｆｉｎｉｔｉｏｎｓ----------------------
 count = 0
 for i in moods:
     filename = moods[count]
