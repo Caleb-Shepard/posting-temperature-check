@@ -4,8 +4,7 @@ import subprocess
 
 # ------------ get data ----------------------------
 get_data_cmd = "./scraper.py"
-temperature_check_cmd = "./temperature_checker.py"
-    #temperature_check_cmd = "/bin/echo"
+temperature_check_cmd = "./temperature_checker2.py"
 
 data_feed = subprocess.check_output(get_data_cmd, shell=True, universal_newlines=True)
 

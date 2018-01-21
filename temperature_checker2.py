@@ -4,14 +4,13 @@ import csv
 import sys
 import os
 
-moods = []
-mood_definitions = []
 
 
 # -----------------------ａｓｓｉｇｎ ｄｅｆｉｎｉｔｉｏｎｓ----------------------
+moods = []
+
 for root, dirs, files in os.walk("./dictionaries/"):  
     for filename in files:
-        #print(filename)
 
         m = filename[:-5]   #  a mood
 
@@ -21,27 +20,25 @@ for root, dirs, files in os.walk("./dictionaries/"):
             for row in reader:
                 dicty.append(row)
 
-        moods.append([m,dicty,0])
+        moods.append([m,dicty[0],0])
 
 moods[0][2] += 1
-print(moods[0][2])
+print(moods[0])
 
-
-#for i in moods:
-#    with open('dictionaries/' + filename) as csvfile:
-#        reader = csv.reader(csvfile, quoting=csv.QUOTE_NONNUMERIC)
-#        for row in reader:                          # arbitrary for the time being
-#            mood_definitions.append(row)
 # -------------------------------------------------------------------------------
 
 # iterate through sys.argv[1:*]?
 # ^ Nah. Just use the first arg \/
-    #print("Taking the temperature of:")
-    #words = sys.argv[1].split()
-    #for w in words:
-    #    print("***>%s<***" %w)
-    #    #for m in moods:
-    #        #if w in m
+print("Taking the temperature of:")
+words = sys.argv[1].split()
+for w in words:
+    #print("***>%s<***" %w)
+    for m in moods:
+        if w in m[1]:
+            m[2] += 1
+
+for m in moods:
+    print("{0} has {1} occurences".format( m[0], m[2]))
 # Deep
 # antiwords
     # make an antiword list
