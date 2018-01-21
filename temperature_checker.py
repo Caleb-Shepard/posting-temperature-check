@@ -1,3 +1,4 @@
+#!/bin/python3
 #!/(♥_♥)\
 import csv
 import sys
