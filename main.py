@@ -20,7 +20,7 @@ data_feed = data_feed[:-3]
 blocks = data_feed.split("', '")
 
 for b in blocks:
-    print("Temperature of tweet: \n%s\n" % b)
+    print("Taking temperature of tweet: \n%s . . .\n" % b)
     print(subprocess.check_output( [temperature_check_cmd, b]).decode('utf-8') )
     print("*******************************")
 # --------------------------------------------------

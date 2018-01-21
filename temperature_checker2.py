@@ -12,7 +12,7 @@ moods = []
 for root, dirs, files in os.walk("./dictionaries/"):  
     for filename in files:
 
-        m = filename[:-5]   #  a mood
+        m = filename[:-4]   #  a mood
 
         dicty = []  #  words implying the mood m
         with open('dictionaries/' + filename) as csvfile:
@@ -22,14 +22,15 @@ for root, dirs, files in os.walk("./dictionaries/"):
 
         moods.append([m,dicty[0],0])
 
-moods[0][2] += 1
-print(moods[0])
+# if you need to see what's going on, uncomment these following
+#moods[0][2] += 1
+#print(moods[0])
 
 # -------------------------------------------------------------------------------
 
 # iterate through sys.argv[1:*]?
 # ^ Nah. Just use the first arg \/
-print("Taking the temperature of:")
+print("Temperature:")
 words = sys.argv[1].split()
 for w in words:
     #print("***>%s<***" %w)
@@ -38,7 +39,8 @@ for w in words:
             m[2] += 1
 
 for m in moods:
-    print("{0} has {1} occurences".format( m[0], m[2]))
+    #print("{0} has {1} occurences".format( m[0], m[2]))
+    print("****** {0}% {1} *******".format( 100 * m[2]/len(words), m[0]))
 # Deep
 # antiwords
     # make an antiword list
